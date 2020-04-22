@@ -1,11 +1,19 @@
 from pykrx import stock
 import numpy as np
 import pandas as pd
-import time
- 
+
 tickers = stock.get_market_ticker_list() # collect stock num
 stock_num = np.array(tickers)
- 
+
+def add_zero(num):
+    num = str(num)
+    num = "0"*(6-len(num))+num
+    print(num)
+
+
+
+
+
 for i in tickers:
     df = stock.get_market_ohlcv_by_date("20160101","20200406",i)
     date_ = df.index
@@ -18,8 +26,9 @@ for i in tickers:
         date_idx.append(date_idx_tmp.split(" ")[0])
     #end_index
     for i in end_costs:
-        print(i[3])
+        #stock.get_market_ticker_name("종목번호")
+        print(stock.get_market_ticker_name(add_zero(i[3])))
+        input()
         end_cost_values.append(i[3])
  
-    time.sleep(100)
- 
+
