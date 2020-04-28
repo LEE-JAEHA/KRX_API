@@ -8,7 +8,7 @@ stock_num = np.array(tickers)
 company_list=list()
 def stock_name():
     wb = op.Workbook()
-    wb = op.load_workbook("./data/stock_list.xlsx")
+    wb = op.load_workbook("./data/data.xlsx")
     sheet1 = wb["Sheet1"]
     for idx,val in enumerate(sheet1):
         if idx == 0:
@@ -39,6 +39,6 @@ for i in range(len(new_com_list)):
     wb2.cell(row=i+2,column=1).value = new_com_list[i][0]
     wb2.cell(row=i+2, column=2).value = new_com_list[i][1]
 wf.save("./data/stock_list_with_name&num.xlsx")
-
+print("FINISH : KOSPI LIST 100 MAKE")
 
 
