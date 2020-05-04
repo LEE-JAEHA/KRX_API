@@ -8,7 +8,7 @@ stock_num = np.array(tickers)
 company_list=list()
 def stock_name():
     wb = op.Workbook()
-    wb = op.load_workbook("./data/data.xlsx")
+    wb = op.load_workbook("./data/modify_data.xlsx")
     sheet1 = wb["Sheet1"]
     for idx,val in enumerate(sheet1):
         if idx == 0:
