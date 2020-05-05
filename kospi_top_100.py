@@ -26,6 +26,7 @@ new_com_list=list()
 for i in tickers:
     #print(i)
     num_ = stock.get_market_ticker_name(i)
+    print(num_)
     if num_ in company_list:
         new_com_list.append([num_,i])
 
