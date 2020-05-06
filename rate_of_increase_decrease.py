@@ -72,16 +72,22 @@ for key,val in company_list.items():
         ratio.append(round(((new_cost-old_cost)  / new_cost) * 100,4))
         old_cost = new_cost
     company_cost_ratio[key]=ratio
-
+# print(len(company_list['date']))
+# input("CHECK")
 date_ratio_list = OrderedDict()
 #date_ratio_list는 key 값은 시간 value 값은 100개 종목 ration 순서대로 되어있음
+
+
+
+
 for idx, (key,val) in enumerate(company_cost_ratio.items() ):
     # if idx<10:
     #     print(idx , " + ",key," : ",end=" ")
     #     print(val)
     for i,ratio in enumerate(val):
         tmp = list()
-        index = company_list['date'][i]
+        index = company_list['date'][i+1]
+
         if date_ratio_list.get(index):
             tmp = date_ratio_list[index]
             tmp.append((ratio,len(date_ratio_list[index])))
@@ -90,15 +96,26 @@ for idx, (key,val) in enumerate(company_cost_ratio.items() ):
             tmp.append((ratio,0))
             date_ratio_list[index]=tmp
 
-make_ratio_excel()
+for idx, (key, val) in enumerate(date_ratio_list.items()):
+    if idx==0:
+        print(key,val)
 
+
+make_ratio_excel()
 print("-"*100)
+
 for idx, (key, val) in enumerate(date_ratio_list.items()):
     date_ratio_list[key]=sorted(date_ratio_list[key],key=lambda x : x[0],reverse=True)
-    if idx >100:
-        continue
-    # print(idx , " + ",key," : ",end=" ")
-    # print(val)
+
+
+### top5 bottom5 excel 파일 만들기
+wf = op.Workbook()
+wb = wf.active
+wb['A2'] = "TOP 5";
+wb['A9'] = "BOTTOM 5"
+for i in range(1,6):
+    wb["A"+str(i+2)]=i
+    wb["A" + str(i + 9)] = i
 
 
 for idx, (key, val) in enumerate(date_ratio_list.items()):
@@ -108,12 +125,12 @@ for idx, (key, val) in enumerate(date_ratio_list.items()):
             if i ==0:
                 print("상위 5개")
             num_ = ratio[1]
-            print(company_list_num[num_])
-        elif i>95:
-            if i == 96:
+            print(company_list_num[num_]," / ratio : ",ratio[0])
+        elif i>=95:
+            if i == 95:
                 print("하위 5개")
             num_ = ratio[1]
-            print(company_list_num[num_])
+            print(company_list_num[num_]," / ratio : ",ratio[0])
     print("-"*100)
 
     # if idx < 5:
