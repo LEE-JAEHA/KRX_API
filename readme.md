@@ -1,9 +1,11 @@
 
 ### kospi_top_100.py  
+***
 <ul>  
 <li>./data/modify_data.xlsx 파일에 있는 종목을 읽어와 ./data/stock_list_with_name&num.xlsx 에 종목명과 종목코드를 쓴다.</li>  
 </ul>  
-  
+
+---
 ### combine_data_in_one_file.py  
 <ul>  
 <li>./data/stock_list_with_name&num.xlsx 에 있는 정보를 읽어와  <br>"./data/combine_data.xlsx" 에 20170102부터 20190406까지 top100 종목의 종가를 <br>하나의 시트안에 저장한다.</li>  
@@ -15,7 +17,7 @@
 </li>  
 </ul>
 
-
+---
 ### rate_of_increase_decrease.py  
 <ul>  
 	<li>
@@ -26,4 +28,4 @@
 	</li>  
 
 </ul>  
-  
+  ---
