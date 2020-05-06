@@ -29,7 +29,7 @@ wb['A1'] = "종목코드";
 wb['B1'] = "회사명"
 for idx,val in enumerate(company_list):
     df = stock.get_market_ohlcv_by_date("20170101", "20200406", val[1])
-    wb['A'+str(idx+2)]= val[0];wb['B'+str(idx+2)]=val[1]
+    wb['A'+str(idx+2)]= val[1];wb['B'+str(idx+2)]=val[0]
     print(val[1])
     print(val)
 
