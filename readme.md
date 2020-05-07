@@ -20,10 +20,8 @@
 ### rate_of_increase_decrease.py  
 <ul>  
 	<li>
-	./data/modify_data.xlsx 파일에 있는 종목을 읽어와 ./data/combine_data_ratio.xlsx 에 날짜별 top100 개 기업에 대한 등락율을 기록한다
-	</li>  
-	<li>
-	.... top 5 bottom 5 코드 작성 중...
+	./data/modify_data.xlsx 파일에 있는 종목을 읽어와 ./data/combine_data_ratio.xlsx 에 날짜별 top100 개 기업에 대한 등락율을 기록한다<br>
+	상위5개 하위 5개 기록...
 	</li>  
 
 </ul>  
