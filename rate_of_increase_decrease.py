@@ -120,19 +120,31 @@ for i in range(1,6):
 
 for idx, (key, val) in enumerate(date_ratio_list.items()):
     print(key)
+    wb.cell(row=1, column=2 * idx + 2).value = key
+    wb.cell(row=1, column=2 * idx + 3).value = "비율"
     for i,ratio in enumerate(date_ratio_list[key]):
         if i<5:
             if i ==0:
                 print("상위 5개")
-            num_ = ratio[1]
-            print(company_list_num[num_]," / ratio : ",ratio[0])
+
+            company_name = company_list_num[ratio[1]]
+            print(company_name," / ratio : ",ratio[0])
+            company_name=company_name.split("_")
+            #날짜 열에는 회사명 비율 열에는 등락율
+            wb.cell(row=i+3, column=2*idx+2).value = company_name[1]
+            wb.cell(row=i+3, column=2 * idx + 3).value = ratio[0]
+
         elif i>=95:
             if i == 95:
                 print("하위 5개")
-            num_ = ratio[1]
-            print(company_list_num[num_]," / ratio : ",ratio[0])
+            company_name = company_list_num[ratio[1]]
+            print(company_name, " / ratio : ", ratio[0])
+            company_name = company_name.split("_")
+            wb.cell(row=i -85, column=2 * idx + 2).value = company_name[1]
+            wb.cell(row=i -85, column=2 * idx + 3).value = ratio[0]
     print("-"*100)
 
+wf.save("./data/combine_data_ratio.xlsx")
     # if idx < 5:
     #     print(date_ratio_list[key])
     #     continue
