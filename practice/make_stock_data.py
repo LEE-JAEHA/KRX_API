@@ -8,6 +8,7 @@ company_list=list()
 def stock_name_num():
     wb = op.Workbook()
     wb = op.load_workbook("../data/stock_list_with_name&num.xlsx")
+
     sheet1 = wb["Sheet"]
     for idx,val in enumerate(sheet1):
         if idx == 0:

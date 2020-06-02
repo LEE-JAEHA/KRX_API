@@ -11,8 +11,11 @@ for i in range(len):
 wb.cell(row="A",colum=0)
 
 
+wb2 = op.Workbook()
+wb2 = wb2.active
 
-wb.save('./test.xlsx')
+
+wb2.save('./data/practice/test.xlsx')
 wb.close()
  
  

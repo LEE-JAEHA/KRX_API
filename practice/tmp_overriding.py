@@ -13,3 +13,40 @@ def average3(num1, num2, num3=9):
   return result
 
 print(shw_img(3,e=1))
+
+
+
+
+a=1
+c=2
+d =  a if not (a,int) else c
+
+print("d :  ", d)
+print("a : " ,a)
+
+
+print("**"*100)
+import argparse as ar
+
+# parser = ar.ArgumentParser(description='Process some integers.')
+#
+# #parser.add_argument('--sum', dest='accumulate', action='store_const',const=sum, default=max,help='sum the integers (default: find the max)')
+#
+# parser.add_argument("temp",metavar='test입니다',type=str)
+# parser.add_argument('integers', metavar='N', type=int)
+# args = parser.parse_args()
+# print(args)
+#
+# print("RESULT  : " ,args.temp)
+#
+# a ="hi"
+# s = ['a','b','c']
+# d = ['a','b','c']
+# c = s/"{}.333".format(d)
+# print(c)
+def vis_data(x,y = None, c = 'r'):
+    print(y)
+    print(c)
+
+
+vis_data(1)
