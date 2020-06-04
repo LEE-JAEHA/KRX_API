@@ -44,9 +44,18 @@ import argparse as ar
 # d = ['a','b','c']
 # c = s/"{}.333".format(d)
 # print(c)
-def vis_data(x,y = None, c = 'r'):
-    print(y)
-    print(c)
+# def vis_data(x,y = None, c = 'r'):
+#     print(y)
+#     print(c)
+#
+#
+# vis_data(1)
+x = {'a': 10, 'b': 20, 'c': 30, 'd': 40}
+x.update(e=90)
+if 'g' in x:
+    print("HI")
+y= dict()
+y['a']={1:2}
+y['a'].update({2:3})
+print(y)
 
-
-vis_data(1)

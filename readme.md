@@ -25,4 +25,14 @@
 	</li>  
 
 </ul>  
+ ### combine_indicator_date.py
+<ul>  
+<li>"./data/indicator/stock_data_indicator_0603.xlsx" 에 있는 정보를 읽어와  <br>"./data/indicator/indicator_dict" 에 indicator: indicator[날짜][기업명] 에 대한 보조 지표 데이터를 가지고 있는 딕셔너리 파일을 저장한다.</li>    
+</ul>
+
+
+
+
+
   ---
+  
