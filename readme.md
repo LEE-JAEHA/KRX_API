@@ -15,18 +15,32 @@
   
   
 ---  
-### rate_of_increase_decrease.py <ul>    
+### rate_of_increase_decrease.py <ul>
+<ul>     
    <li>  
    ./data/modify_data.xlsx 파일에 있는 종목을 읽어와 ./data/combine_data_ratio.xlsx 에 날짜별 top100 개 기업에 대한 등락율을 기록한다<br>  
    상위5개 하위 5개 기록...  
-   </li>    
-  
+   </li>
+</ul>    
+
+### combine_data_in_one_row=date.py
+<ul>    
+<li>"./data/combine_data.xlsx" 에 있는 정보를 읽어와  <br>"./data/combine_data_ratio.xlsx" 에 각 날짜별 등락율을 기록하며
+ <br> "./data/combine_data_ratio_row=date.xlsx" 에 날짜별 TOP5를 적는다.
+ </li>      
+ 
 </ul> 
+
+
+
 ---
 ### combine_indicator_date.py  
 <ul>    
 <li>"./data/indicator/stock_data_indicator_0603.xlsx" 에 있는 정보를 읽어와  <br>"./data/indicator/indicator_dict" 에 indicator: indicator[날짜][기업명] 에 대한 보조 지표 데이터를 가지고 있는 딕셔너리 파일을 저장한다.</li>      
 </ul>  
+
+
+
   
   
   
