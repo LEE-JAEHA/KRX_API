@@ -1,17 +1,29 @@
 import openpyxl as op
 
+#
+# wb = op.Workbook()
+# wb = op.load_workbook("../data/indicator/stock_data_indicator.xlsx")
+#
+# for i in wb:# i는 sheet 하나씩
+#     for j in i : # j는 i sheet에서 한줄 씩
+#         for k in j:
+#             print(k.value, end =" ")
+#
+#
+# wb.active
+# print("HI")
+#
 
-wb = op.Workbook()
-wb = op.load_workbook("../data/indicator/stock_data_indicator.xlsx")
+from tqdm import tqdm_notebook
+from tqdm import trange
+from tqdm import tqdm
+import time
+for i in tqdm(range(10)):
+    time.sleep(0.1)
 
-for i in wb:# i는 sheet 하나씩
-    for j in i : # j는 i sheet에서 한줄 씩
-        for k in j:
-            print(k.value, end =" ")
-
-
-wb.active
-print("HI")
+for i in trange(10):
+    time.sleep(0.1)
+    print(10)
 
 
 
