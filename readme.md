@@ -1,7 +1,7 @@
   
 ### kospi_top_100.py <ul>    
 <li>./data/modify_data.xlsx 파일에 있는 종목을 읽어와 ./data/stock_list_with_name&num.xlsx 에 종목명과 종목코드를 쓴다.</li>    
-</ul>    
+ 
   
 ---  
 ### combine_data_in_one_file.py <ul>    
@@ -12,7 +12,7 @@
     </li>    
     </ul>    
 </li>    
-</ul>  
+  
   
 ---  
 ### rate_of_increase_decrease.py <ul>    
