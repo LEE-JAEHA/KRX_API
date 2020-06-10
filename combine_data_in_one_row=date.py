@@ -129,6 +129,7 @@ for idx, (key, val) in enumerate(date_ratio_list.items()):
 
 #input("STOP")
 wf.save("./data/combine_data_ratio_row=date.csv")
+wf.save("./data/combine_data_ratio_row=date.xlsx")
     # if idx < 5:
     #     print(date_ratio_list[key])
     #     continue

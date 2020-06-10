@@ -94,13 +94,14 @@ def read_indicator_and_write(company_list,wb,wb2):
             tmp = list()
             for v in val:
                 tmp.append(v.value)
+            tmp.append(False)
             new_ = {company: tmp}
             if date_ in indicator:
                 tmp2 = indicator[date_]
                 indicator[date_].update(new_)
             else:
                 indicator[date_ ]=new_
-    file = open("./data/indicator/indicator_dict","wb")
+    file = open("./data/indicator/indicator_dict2","wb")
     pickle.dump(indicator,file)
     file.close()
 
@@ -128,12 +129,12 @@ def make_indicator_file_sheet_name_date(company_list,indicator,wb2):
 company_list = stock_name_num()
 #tmp_stock_list() # TODO :수정된 기업 리스트로 다시 해야 함
 wb2 = op.Workbook()
-if os.path.exists("./data/indicator/indicator_dict"):
-    file = open("./data/indicator/indicator_dict", "rb")
+if os.path.exists("./data/indicator/indicator_dict2"):
+    file = open("./data/indicator/indicator_dict2", "rb")
     indicator = pickle.load(file)
 else:
     wb = op.Workbook()
-    wb = op.load_workbook("./data/indicator/stock_data_indicator_0603.xlsx")
+    wb = op.load_workbook("./data/indicator/stock_data_indicator_level_0604_new.xlsx")
 
     indicator_menu_list(company_list,wb,wb2)
     indicator = dict()

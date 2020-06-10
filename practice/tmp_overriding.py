@@ -50,12 +50,6 @@ import argparse as ar
 #
 #
 # vis_data(1)
-x = {'a': 10, 'b': 20, 'c': 30, 'd': 40}
-x.update(e=90)
-if 'g' in x:
-    print("HI")
-y= dict()
-y['a']={1:2}
-y['a'].update({2:3})
-print(y)
-
+tmp = "회사명	close	diff	open	high	low	volume	MMS_MA20P	MMS_MA60P	MMS_MA120P	MMS_ATR	MMS_slowk	MMS_slowd	MMS_MOM	MMS_RSI	MMS_ADX	MMS_macd	MMS_macdsignal	MMS_macdhist	MMS_aroondown	MMS_aroonup	MMS_VAR	MMS_WILLR	search	combine"
+tmp2 = tmp.split("\t")
+print(tmp2)
