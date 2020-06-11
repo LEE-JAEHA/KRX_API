@@ -60,10 +60,21 @@ train_pre = df_[menu_list[6:]]
 train_pre = train_pre.sample(frac=0.8).reset_index(drop=True)
 
 tmp = train_pre["TOP5"]
+# print(len(tmp))
+# del train_pre["TOP5"]
+# print(type(tmp))
+# print(tmp.iloc[100:])
+# tmp2 = tmp.iloc[100:]
+# print("LENGTH 2 : ", len(tmp2))
+# tmp3 = train_pre.iloc[0:len(train_pre)-100]
+# print("LENGTH 3 : ", len(tmp3))
+# input("TME " )
+train_pre = train_pre.iloc[0:len(train_pre)-100]
+up_list = tmp.iloc[100:]
 train_pre = train_pre.iloc[:,:-3]#이부분을 통해 indicator 어떤 것들을 넣을 것인지
 #x_train, x_test, y_train, y_test = train_test_split(train_pre, df_['TOP5'], test_size=0.1, random_state=13)
-x_train, x_test, y_train, y_test = train_test_split(train_pre, tmp, test_size=0.1, random_state=13)
-
+x_train, x_test, y_train, y_test = train_test_split(train_pre, up_list, test_size=0.1, random_state=13)
+input("TME " )
 tree_clf = DecisionTreeClassifier(criterion='entropy',max_depth=15 , random_state=13)
 
 
