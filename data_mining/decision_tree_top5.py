@@ -21,7 +21,7 @@ menu_list =[
 
 
 
-path_indicator= "../data/indicator/indicator_dict2"
+path_indicator= "../data/indicator/indicator_dict3"
 if os.path.exists(path_indicator):
     file = open(path_indicator, "rb")
     indicator = pickle.load(file)
