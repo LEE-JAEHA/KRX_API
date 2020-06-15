@@ -65,6 +65,7 @@ train_pre = df_[menu_list[7:-1]]
 #train_pre=train_pre_.dropna(axis=0)
 pd.options.mode.chained_assignment = None#열 전체 값 바꾸는 것 허용
 
+#LEVEL 되어있는 것을 바꿈. enum 느낌으로
 for idx,val in enumerate(menu_list):
     if idx == len(menu_list)-1:
         break
