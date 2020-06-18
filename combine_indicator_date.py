@@ -37,7 +37,6 @@ def indicator_menu_list(company_list,wb,wb2):
     :param company_list: 기업명
     :param wb: #wb => "./data/indicator/stock_data_indicator.xlsx" 보조지표 전체 리스트
     :param wb2: 내가 새롭게 만들 시트 / 날짜별 기업 지표
-    :return: X
     이 함수가 끝나면 시트 이름은 시간 각 시트 내용은 보조 지표에 대한 파일이 만들어진다.
     """
 

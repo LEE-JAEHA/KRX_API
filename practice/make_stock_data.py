@@ -1,4 +1,4 @@
-from pykrx import stock
+
 import numpy as np
 import openpyxl as op
 import pandas as pd
@@ -24,10 +24,11 @@ def add_zero(num):
 
 
 stock_name_num()
+from pykrx import stock
 for idx,val in enumerate(company_list):
     wf = op.Workbook()
     wb = wf.active
-    df = stock.get_market_ohlcv_by_date("20160101", "20200406", val[1])
+    df = stock.get_market_ohlcv_by_date("20170101", "20200406", val[1])
     wb['A1'] = val[0];
     wb['A2'] = "날짜";
     wb['B2'] = "종가"

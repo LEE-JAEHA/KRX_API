@@ -16,6 +16,8 @@ def read_indicator_and_write(wb):
     for sheet in wb:
         date_ = sheet.title #시트 이름은 날짜 이름
         print(date_)
+        if date_ == '2020-04-07':
+            break
         for idx,val in enumerate(sheet):
             if idx == 0: # 첫번째 줄 index
                 continue
@@ -31,7 +33,7 @@ def read_indicator_and_write(wb):
                 indicator[date_].update(new_)
             else:
                 indicator[date_ ]=new_
-    file = open("../data/indicator/with_level_indicator","wb")
+    file = open("../data/indicator/with_level_indicator", "wb")
     pickle.dump(indicator,file)
     file.close()
 
@@ -44,7 +46,7 @@ if os.path.exists("../data/indicator/with_level_indicator"):
 else:
     wb = op.Workbook()
     print("OK")
-    wb = op.load_workbook("../data/final/normalized/combine_level_indicator_MinMax_sheet_date.xlsx")
+    wb = op.load_workbook("../data/final/normalized/combine_level_indicator_MaxAbs_sheet_date.xlsx")
     indicator = dict()
     indicator = read_indicator_and_write(wb)
     print("FINISH")

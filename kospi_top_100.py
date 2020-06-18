@@ -14,6 +14,13 @@ def stock_name():
         if idx == 0:
             continue
         company_list.append(val[0].value)
+    import pickle
+    file = open("./data_mining/cp_list","wb")
+    pickle.dump(company_list,file)
+    file.close()
+    print(company_list)
+
+    input("...")
     wb.close()
 def add_zero(num):
     num = str(num)

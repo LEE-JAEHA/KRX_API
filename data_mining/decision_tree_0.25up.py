@@ -60,6 +60,11 @@ train_pre = df_[menu_list[6:]]
 train_pre = train_pre.sample(frac=0.8).reset_index(drop=True)
 
 tmp = train_pre["TOP5"]
+"""top5리스트 저장"""
+import pickle
+file = open("../data/indicator/level_top5","wb")
+pickle.dump(train_pre["TOP5"],file)
+file.close
 # print(len(tmp))
 # del train_pre["TOP5"]
 # print(type(tmp))
