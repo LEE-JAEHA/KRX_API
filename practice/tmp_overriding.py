@@ -80,7 +80,12 @@ import argparse as ar
 #         print("D:/MVP/code/yolo/yolo2/data/plate/images/"+i)
 
 #print ("file_list: {}".format(file_list))
+#
+#
+# tmp = input(": ")
+# print(tmp.split('\t'))
 
 
-tmp = input(": ")
-print(tmp.split('\t'))
+stride = 2
+tmp = [stride] + [1] *(2-1)
+print(tmp)

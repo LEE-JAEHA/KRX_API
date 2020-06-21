@@ -70,17 +70,25 @@ for idx,val in enumerate(menu_list):
 # up_list = up_list.iloc[len(train_pre)-1000:] #마지막 10일 up 지표
 
 #up_list 에는 0.25 up에 대한 데이터가 들어가 있음
-with open('./0.25up_list','rb') as f:
+with open('./0.25up_list_2','rb') as f:
     up_list = pickle.load(f)
 
 del train_pre['up']
-len_ = len(up_list) # 200406까지 데이터만 쓰겠다.
+len_ = len(up_list) # 200406까지 데이터만 쓰겠다.'
 
-x_valid = train_pre.iloc[len_-1000 : len_]
-y_valid = up_list[len_-1000 :len_ ]
+# for i in df_['date']:
+#     print(i)
+# print("*"*100)
+# print(df_['date'][len_])
+up_list = up_list[100:]
+train_pre = train_pre.iloc[:len_-100]
 
-train_pre = train_pre.iloc[0:len_-1000] # 마지막 10일 전까지 보조 지표
-up_list_tmp = up_list[0:len_-1000]
+
+len_ = len(up_list)
+x_valid = train_pre.iloc[len_-1500 : len_]
+y_valid = up_list[len_-1500 :len_ ]
+train_pre = train_pre.iloc[0:len_-1500] # 마지막 10일 전까지 보조 지표
+up_list_tmp = up_list[0:len_-1500]
 
 
 x_train, x_test, y_train, y_test = train_test_split(train_pre,up_list_tmp, test_size=0.1, random_state=13)

@@ -22,7 +22,7 @@ if os.path.exists(path_indicator):
 
 
 for idx,date_ in enumerate(indicator.keys()):
-    #print(idx, " : ",date_)
+    print(idx, " : ",date_)
     # if idx ==10:
     #     break
     if idx ==0:
@@ -30,8 +30,12 @@ for idx,date_ in enumerate(indicator.keys()):
         continue
     tmp = pd.DataFrame.from_dict(indicator[date_],orient='index',columns=menu_list)
     df = pd.concat([df,tmp])
+print(len(df))
 
-df_ = df.dropna(axis=0) #없는 값 제거
+#df_ = df.dropna(axis=0) #없는 값 제거
+df_ = df.fillna(0)
+print(len(df_))
+input("TME " )
 # base_dir = "D:/수업/데마/stock_proj/KRX_API/data_mining/"
 # file_nm = "df.xlsx"
 # xlxs_dir = os.path.join(base_dir, file_nm)
@@ -57,13 +61,13 @@ df_ = df.dropna(axis=0) #없는 값 제거
 #             print(e)
 #
 
-train_pre = df_[menu_list[6:]]
-train_pre = train_pre.sample(frac=0.8).reset_index(drop=True)
 
+train_pre = df_[menu_list[6:]]
 #0.25 리스트 저장
 tmp = train_pre["TOP5"]
-with open("./0.25up_list",'wb') as f:
+with open("./0.25up_list_2",'wb') as f:
     pickle.dump(tmp,f,pickle.HIGHEST_PROTOCOL)
+train_pre = train_pre.sample(frac=0.8).reset_index(drop=True)
 
 
 """top5리스트 저장"""
